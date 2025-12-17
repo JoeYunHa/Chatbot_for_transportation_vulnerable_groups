@@ -1,0 +1,92 @@
+# ------------------------------------------------
+# 1. Python (General)
+# ------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions (일반적인 Python C 확장)
+*.so
+
+# Distribution / Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------
+# 2. Virtual Environment (가상환경)
+# ------------------------------------------------
+# 사용자가 생성할 수 있는 일반적인 가상환경 폴더명들
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# ------------------------------------------------
+# 3. Environment Variables & Secrets (보안 필수)
+# ------------------------------------------------
+# DB 비밀번호, AWS Key 등이 들어있는 파일은 절대 커밋 금지
+.env
+.env.*
+!.env.example  # 예시 파일은 커밋하여 팀원들에게 형식을 공유하는 것이 좋음
+
+# ------------------------------------------------
+# 4. C++ Build Artifacts (경로 탐색 엔진 빌드 파일)
+# ------------------------------------------------
+# CMake 생성 파일 및 빌드 폴더
+app/core/cpp_engine/build/
+app/core/cpp_engine/CMakeFiles/
+app/core/cpp_engine/CMakeCache.txt
+app/core/cpp_engine/cmake_install.cmake
+app/core/cpp_engine/Makefile
+
+# 컴파일된 객체 파일 및 바이너리
+*.o
+*.obj
+
+# Pybind11로 빌드된 공유 라이브러리 (.so)
+# (단, 로컬 개발용 .so는 무시하되, 배포를 위해 미리 빌드된 파일을 
+#  Git으로 관리해야 한다면 이 줄을 주석 처리하거나 예외 규칙(!)을 추가해야 함.
+#  일반적으로는 빌드 스크립트로 생성하므로 무시하는 것이 맞음)
+*.so
+*.dylib
+*.dll
+
+# ------------------------------------------------
+# 5. Data & Temporary Files (프로젝트 특화)
+# ------------------------------------------------
+# Whisper 음성 처리 중 생성되는 임시 파일들
+data/temp/*
+!data/temp/.gitkeep  # 폴더 구조는 유지하되 내용물만 무시
+
+# 로그 파일
+*.log
+logs/
+
+# ------------------------------------------------
+# 6. IDE / Editor Settings
+# ------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ------------------------------------------------
+# 7. OS Generated Files
+# ------------------------------------------------
+.DS_Store
+Thumbs.db
